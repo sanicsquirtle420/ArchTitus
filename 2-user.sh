@@ -38,6 +38,8 @@ makepkg -si --noconfirm
 yay -S --noconfirm --needed - < ~/RacArch/pkg-files/aur-pkgs.txt
 
 export PATH=$PATH:~/.local/bin
+cd ~/RacArch
+git clone "https://github.com/sanicsquirtle420/dotfiles"
 cp -r ~/RacArch/dotfiles/* ~/.config/
 
 echo -ne "
