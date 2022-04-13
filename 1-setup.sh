@@ -1,18 +1,31 @@
 #!/usr/bin/env bash
 echo -ne "
 -------------------------------------------------------------------------
-██████╗░░█████╗░░█████╗░░█████╗░██████╗░░█████╗░██╗░░██╗
-██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║░░██║
-██████╔╝███████║██║░░╚═╝███████║██████╔╝██║░░╚═╝███████║
-██╔══██╗██╔══██║██║░░██╗██╔══██║██╔══██╗██║░░██╗██╔══██║
-██║░░██║██║░░██║╚█████╔╝██║░░██║██║░░██║╚█████╔╝██║░░██║
-╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝
+                              .                : :
+            _..----..__   __..:'.-'''-.-''    .  :
+          .'      ,    '''    '    :   .'    /  '
+         ',                  ( -=o):(o=-)   .  :
+        :     ,               ''.  ;  .'  __:  :
+        :          :      ,      '.0.''.-'.))  :  __..--
+        :           :                ._.-'__| ':''.
+         .           :   ,   ..  :.-' __.' /   ;    . 
+        .'       ,   :    _.'  '. '.''    /   /  '
+      .:. .'.        :--:'_..--'''.))  .  ' -'    __.--'
+    .''::'   '-.  .-''.  '.   .             __.--'
+    :...:     __\  '.  '..))     '    __.--'
+    ::'':.--''   '.)))          __.--'
+_..--:.::'   .         .  __.--'
+      :' .:.        __.--'
+  '    .::' : __.--'
+jrei  __' .::'
+..--''   ':::' 
+                                RacArch
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
-                        SCRIPTHOME: ArchTitus
+                        Script from: ArchTitus
 -------------------------------------------------------------------------
 "
-source /root/ArchTitus/setup.conf
+source /root/RacArch/setup.conf
 echo -ne "
 -------------------------------------------------------------------------
                     Network Setup 
@@ -71,7 +84,7 @@ echo -ne "
                     Installing Base System  
 -------------------------------------------------------------------------
 "
-cat /root/ArchTitus/pkg-files/pacman-pkgs.txt | while read line 
+cat /root/RacArch/pkg-files/pacman-pkgs.txt | while read line 
 do
     echo "INSTALLING: ${line}"
    sudo pacman -S --noconfirm --needed ${line}
@@ -111,7 +124,7 @@ elif grep -E "Intel Corporation UHD" <<< ${gpu_type}; then
     pacman -S libva-intel-driver libvdpau-va-gl lib32-vulkan-intel vulkan-intel libva-intel-driver libva-utils lib32-mesa --needed --noconfirm
 fi
 #SETUP IS WRONG THIS IS RUN
-if ! source /root/ArchTitus/setup.conf; then
+if ! source /root/RacArch/setup.conf; then
 	# Loop through user input until the user gives a valid username
 	while true
 	do 
@@ -148,7 +161,7 @@ echo "password=${password,,}" >> ${HOME}/ArchTitus/setup.conf
 		fi 
 	done 
 
-    echo "nameofmachine=${nameofmachine,,}" >> ${HOME}/ArchTitus/setup.conf
+    echo "nameofmachine=${nameofmachine,,}" >> ${HOME}/RacArch/setup.conf
 fi
 echo -ne "
 -------------------------------------------------------------------------
@@ -161,8 +174,8 @@ if [ $(whoami) = "root"  ]; then
 
 # use chpasswd to enter $USERNAME:$password
     echo "$USERNAME:$PASSWORD" | chpasswd
-	cp -R /root/ArchTitus /home/$USERNAME/
-    chown -R $USERNAME: /home/$USERNAME/ArchTitus
+	cp -R /root/RacArch /home/$USERNAME/
+    chown -R $USERNAME: /home/$USERNAME/RacArch
 # enter $nameofmachine to /etc/hostname
 	echo $nameofmachine > /etc/hostname
 else
