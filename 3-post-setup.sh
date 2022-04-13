@@ -1,12 +1,25 @@
 #!/usr/bin/env bash
 echo -ne "
 -------------------------------------------------------------------------
-██████╗░░█████╗░░█████╗░░█████╗░██████╗░░█████╗░██╗░░██╗
-██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║░░██║
-██████╔╝███████║██║░░╚═╝███████║██████╔╝██║░░╚═╝███████║
-██╔══██╗██╔══██║██║░░██╗██╔══██║██╔══██╗██║░░██╗██╔══██║
-██║░░██║██║░░██║╚█████╔╝██║░░██║██║░░██║╚█████╔╝██║░░██║
-╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝
+                              .                : :
+            _..----..__   __..:'.-'''-.-''    .  :
+          .'      ,    '''    '    :   .'    /  '
+         ',                  ( -=o):(o=-)   .  :
+        :     ,               ''.  ;  .'  __:  :
+        :          :      ,      '.0.''.-'.))  :  __..--
+        :           :                ._.-'__| ':''.
+         .           :   ,   ..  :.-' __.' /   ;    . 
+        .'       ,   :    _.'  '. '.''    /   /  '
+      .:. .'.        :--:'_..--'''.))  .  ' -'    __.--'
+    .''::'   '-.  .-''.  '.   .             __.--'
+    :...:     __\  '.  '..))     '    __.--'
+    ::'':.--''   '.)))          __.--'
+_..--:.::'   .         .  __.--'
+      :' .:.        __.--'
+  '    .::' : __.--'
+jrei  __' .::'
+..--''   ':::' 
+                                RacArch
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
                         SCRIPTHOME: ArchTitus
@@ -15,7 +28,7 @@ echo -ne "
 Final Setup and Configurations
 GRUB EFI Bootloader Install & Check
 "
-source /root/ArchTitus/setup.conf
+source /root/RacArch/setup.conf
 genfstab -U / >> /etc/fstab
 if [[ -d "/sys/firmware/efi" ]]; then
     grub-install --efi-directory=/boot ${DISK}
@@ -70,8 +83,8 @@ sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /et
 # Add sudo rights
 sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
-rm -r /root/ArchTitus
-rm -r /home/$USERNAME/ArchTitus
+rm -r /root/RacArch
+rm -r /home/$USERNAME/RacArch
 
 # Replace in the same state
 cd $pwd
