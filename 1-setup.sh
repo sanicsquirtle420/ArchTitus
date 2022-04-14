@@ -138,11 +138,11 @@ if ! source /root/RacArch/setup.conf; then
 		echo "Incorrect username."
 	done 
 # convert name to lowercase before saving to setup.conf
-echo "username=${username,,}" >> ${HOME}/ArchTitus/setup.conf
+echo "username=${username,,}" >> ${HOME}/RacArch/setup.conf
 
     #Set Password
     read -p "Please enter password:" password
-echo "password=${password,,}" >> ${HOME}/ArchTitus/setup.conf
+echo "password=${password,,}" >> ${HOME}/RacArch/setup.conf
 
     # Loop through user input until the user gives a valid hostname, but allow the user to force save 
 	while true
