@@ -160,6 +160,10 @@ pacstrap /mnt base linux linux-firmware sudo vim grub
 echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 cp -R ${SCRIPT_DIR} /mnt/root/RacArch
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
+mkdir /mnt/root
+cd /root
+git clone https://github.com/sanicsquirtle420/RacArch
+cd ~
 echo -ne "
 -------------------------------------------------------------------------
                     GRUB BIOS Bootloader Install & Check
