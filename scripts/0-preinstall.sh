@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Installing the Base System
 pacstrap /mnt base linux linux-firmware
