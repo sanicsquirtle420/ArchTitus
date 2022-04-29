@@ -1,0 +1,3 @@
+balena-etcher
+rofi-power-menu
+zscroll
