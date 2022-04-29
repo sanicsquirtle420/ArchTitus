@@ -1,11 +1,11 @@
-# chroot into /mnt
-arch-chroot /mnt
+#!/bin/bash
 
 # Installing Essential Packages
 pacman -S sudo networkmanager grub efibootmgr  git vim
 
 # Enableing / Configuring Essential Packages
 systemctl enable NetworkManager.service
+mkdir /boot/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Finishing Steps
