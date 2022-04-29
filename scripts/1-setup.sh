@@ -21,3 +21,4 @@ passwd $username
 
 echo "Perfect!"
 echo "Now reboot the system with 'reboot' then run '2-postinstall.sh'."
+exit
