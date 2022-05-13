@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installing Essential Packages
-pacman -S sudo networkmanager grub efibootmgr  git vim
+pacman -S sudo networkmanager grub efibootmgr  git vim bluez
 
 # Enableing / Configuring Essential Packages
 systemctl enable NetworkManager.service
@@ -20,5 +20,8 @@ echo "Now let's set the password for '${username} ..."
 passwd $username
 
 echo "Perfect!"
-echo "Now reboot the system with 'reboot' then run '2-postinstall.sh'."
+echo "Now edit the sudoers file with 'vim /etc/sudoers'."
+echo "Uncomment (Remove the #) the line that says '%wheel ALL=(ALL:ALL) ALL'"
+echo "Save the file by typing ':wq'"
+echo "After all that reboot and run '2-postinstall.sh'"
 exit
