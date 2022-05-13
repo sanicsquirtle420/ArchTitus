@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installing Essential Packages
-pacman -S sudo networkmanager grub efibootmgr  git vim bluez
+pacman -S sudo networkmanager grub efibootmgr git vim bluez
 
 # Enableing / Configuring Essential Packages
 systemctl enable NetworkManager.service
