@@ -12,7 +12,7 @@ Download ArchISO from <https://archlinux.org/download/> and put on a USB drive w
 ## Initial Setup
 
 ### Partitioning Disks
-Run `gparted` to begin the partion process. Follow the [Arch Linux Partition Guide](https://wiki.archlinux.org/title/Installation_guide#Partition_the_disks) to partion your drives correctly.
+Run `fdisk /dev/sdX` to begin the partion process. Follow the [Arch Linux Partition Guide](https://wiki.archlinux.org/title/Installation_guide#Partition_the_disks) to partion your drives correctly. NOTE: /dev/sdX the X is a variable for what letter could be there (/dev/sda, /dev/sdb, etc.) `fdisk -l` will list all drives.
 
 ### Formating Partitions
 - SWAP Partition `mkswap /dev/swap_part`
